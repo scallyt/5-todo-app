@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+</head>
+
+<body>
+    {{ if .User }}
+    <p>Welcome, {{ .User }}!</p>
+    <form action="/shorten" method="post">
+        <input type="text" name="url" placeholder="Enter URL to shorten">
+        <button type="submit">Shorten</button>
+    </form>
+    {{ if .ShortURL }}
+    <p>Shortened URL: <a href="{{ .ShortURL }}">{{ .ShortURL }}</a></p>
+    {{ end }}
+    <h3>Your URLs:</h3>
+    <ul>
+        {{ range .URLs }}
+        <li>{{ .OriginalURL }} -> <a href="/{{ .ShortID }}">{{ .ShortID }}</a></li>
+        {{ end }}
+    </ul>
+    <a href="/logout">Logout</a>
+    {{ else }}
+    <a href="/login">Login</a> | <a href="/register">Register</a>
+    {{ end }}
+</body>
+
+</html>

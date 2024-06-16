@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regisztráció</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="right"><a href="/register">Register</a></li>
+                <li class="right"><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="register">
+            <h1>Regisztráció</h1>
+            <form action="/register" method="post">
+                <input type="text" name="username" placeholder="Felhasználónév" required>
+                <input type="password" name="password" placeholder="Jelszó" required>
+                <button type="submit">Regisztráció</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 URL Rövidítő. Minden jog fenntartva.</p>
+    </footer>
+</body>
+
+</html>
